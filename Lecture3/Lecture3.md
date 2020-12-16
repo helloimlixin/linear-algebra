@@ -2,15 +2,15 @@
 
 This lecture is about solving systems of linear equation, while the method of solution will not be determinants (which will come later), the method here we'll use is called *Elimination*. It is a method that a lot of software packages used to solve equations.
 
-**Example**
+**Example** Let's consider the following system of linear equations as an example,
 
-Let's consider the following system of linear equations as an example,
+<img src="https://latex.codecogs.com/svg.latex?\begin{aligned}x&space;&plus;&space;2y&space;&plus;&space;z&space;&=&space;2\\&space;3x&space;&plus;&space;8y&space;&plus;&space;z&space;&=&space;12\\&space;4y&space;&plus;&space;z&space;&=&space;12\end{aligned}" title="\begin{aligned}x + 2y + z &= 2\\ 3x + 8y + z &= 12\\ 4y + z &= 12\end{aligned}" />
 
 $$\begin{aligned}x + 2y + z &= 2\\ 3x + 8y + z &= 12\\ 4y + z &= 12\end{aligned}$$
 
 We have the following coefficient matrix,
 
-$A = \begin{bmatrix}1 &2 &1\\ 3 &8 &1\\ 0 &4 &1\end{bmatrix}$, 
+$A = \begin{bmatrix}1 &2 &1\\ 3 &8 &1\\ 0 &4 &1\end{bmatrix}$,
 
 and the system of linear equations can be written in the following matrix form,
 
