@@ -75,23 +75,23 @@ In parallel, we have the product of a row vector and a matrix,
 
 Now let's reproduce the elimination steps above in matrix forms,
 
-**STEP 1**: subtract $3 \times$ row1 from row2
+**STEP 1**: subtract <img src="https://latex.codecogs.com/svg.latex?3&space;\times" title="3 \times" /> row1 from row2
 
-$\begin{bmatrix}1 &0 &0\\-3 &1 &0\\0 &0 &1\end{bmatrix}\begin{bmatrix}1 &2 &1\\3 &8 &1\\0 &4 &1\end{bmatrix}= \begin{bmatrix}1 &2 &1\\0 &2 &-2\\0 &4 &1\end{bmatrix}, \text{where } E_{21} = \begin{bmatrix}1 &0 &0\\-3 &1 &0\\0 &0 &1\end{bmatrix}$
+<img src="https://latex.codecogs.com/svg.latex?\begin{bmatrix}1&space;&0&space;&0\\-3&space;&1&space;&0\\0&space;&0&space;&1\end{bmatrix}\begin{bmatrix}1&space;&2&space;&1\\3&space;&8&space;&1\\0&space;&4&space;&1\end{bmatrix}=&space;\begin{bmatrix}1&space;&2&space;&1\\0&space;&2&space;&-2\\0&space;&4&space;&1\end{bmatrix},&space;\text{where&space;}&space;E_{21}&space;=&space;\begin{bmatrix}1&space;&0&space;&0\\-3&space;&1&space;&0\\0&space;&0&space;&1\end{bmatrix}" title="\begin{bmatrix}1 &0 &0\\-3 &1 &0\\0 &0 &1\end{bmatrix}\begin{bmatrix}1 &2 &1\\3 &8 &1\\0 &4 &1\end{bmatrix}= \begin{bmatrix}1 &2 &1\\0 &2 &-2\\0 &4 &1\end{bmatrix}, \text{where } E_{21} = \begin{bmatrix}1 &0 &0\\-3 &1 &0\\0 &0 &1\end{bmatrix}" />
 
-**STEP 2**: subtract $2 \times$ row2 from row3
+**STEP 2**: subtract <img src="https://latex.codecogs.com/svg.latex?2&space;\times" title="2 \times" /> row2 from row3
 
-$\begin{bmatrix}1 &0 &0\\0 &1 &0\\0 &-2 &1\end{bmatrix}\begin{bmatrix}1 &2 &1\\0 &2 &-2\\0 &4 &1\end{bmatrix} = \begin{bmatrix}1 &2 &1\\0 &2 &-2\\0 &0 &5\end{bmatrix} = \mathcal{U}, \text{where }E_{32} = \begin{bmatrix}1 &0 &0\\0 &1 &0\\0 &-2 &1\end{bmatrix}$
+<img src="https://latex.codecogs.com/svg.latex?\begin{bmatrix}1&space;&0&space;&0\\0&space;&1&space;&0\\0&space;&-2&space;&1\end{bmatrix}\begin{bmatrix}1&space;&2&space;&1\\0&space;&2&space;&-2\\0&space;&4&space;&1\end{bmatrix}&space;=&space;\begin{bmatrix}1&space;&2&space;&1\\0&space;&2&space;&-2\\0&space;&0&space;&5\end{bmatrix}&space;=&space;\mathcal{U},&space;\text{where&space;}E_{32}&space;=&space;\begin{bmatrix}1&space;&0&space;&0\\0&space;&1&space;&0\\0&space;&-2&space;&1\end{bmatrix}" title="\begin{bmatrix}1 &0 &0\\0 &1 &0\\0 &-2 &1\end{bmatrix}\begin{bmatrix}1 &2 &1\\0 &2 &-2\\0 &4 &1\end{bmatrix} = \begin{bmatrix}1 &2 &1\\0 &2 &-2\\0 &0 &5\end{bmatrix} = \mathcal{U}, \text{where }E_{32} = \begin{bmatrix}1 &0 &0\\0 &1 &0\\0 &-2 &1\end{bmatrix}" />
 
 To summarize, we have the elimination can be carried out using matrices as follows,
 
-$E_{32}E_{21}A = \mathcal{U}$
+<img src="https://latex.codecogs.com/svg.latex?E_{32}E_{21}A&space;=&space;\mathcal{U}" title="E_{32}E_{21}A = \mathcal{U}" />
 
 **How to create a matrix that does all the eliminations in one shot?**
 
 Use the **associative** law,
 
-$E_{32}(E_{21}A) = \mathcal{U} \Rightarrow (E_{32}E_{21})A = \mathcal{U} $
+<img src="https://latex.codecogs.com/svg.latex?E_{32}(E_{21}A)&space;=&space;\mathcal{U}&space;\Rightarrow&space;(E_{32}E_{21})A&space;=&space;\mathcal{U}" title="E_{32}(E_{21}A) = \mathcal{U} \Rightarrow (E_{32}E_{21})A = \mathcal{U}" />
 
 > **NOTE**: many facts from Linear Algebra come from simply moving the parentheses.
 
@@ -99,69 +99,69 @@ $E_{32}(E_{21}A) = \mathcal{U} \Rightarrow (E_{32}E_{21})A = \mathcal{U} $
 
 1. **Row-Exchange** let's consider a matrix that exchanges row1 and row2,
 
-   $\begin{bmatrix}0 &1\\1 &0\end{bmatrix}\begin{bmatrix}a &b\\c &d\end{bmatrix} = \begin{bmatrix}c &d\\a &b\end{bmatrix}, \text{where }P = \begin{bmatrix}0 &1\\1 &0\end{bmatrix}$
+   <img src="https://latex.codecogs.com/svg.latex?\begin{bmatrix}0&space;&1\\1&space;&0\end{bmatrix}\begin{bmatrix}a&space;&b\\c&space;&d\end{bmatrix}&space;=&space;\begin{bmatrix}c&space;&d\\a&space;&b\end{bmatrix},&space;\text{where&space;}P&space;=&space;\begin{bmatrix}0&space;&1\\1&space;&0\end{bmatrix}" title="\begin{bmatrix}0 &1\\1 &0\end{bmatrix}\begin{bmatrix}a &b\\c &d\end{bmatrix} = \begin{bmatrix}c &d\\a &b\end{bmatrix}, \text{where }P = \begin{bmatrix}0 &1\\1 &0\end{bmatrix}" />
 
    > **NOTE**: for row permutations, the permutation matrix should be multiplied from the left
 
 2. **Column-Exchange**
 
-   $\begin{bmatrix}a &b\\c &d\end{bmatrix}\begin{bmatrix}0 &1\\1 &0\end{bmatrix}= \begin{bmatrix}b &a\\d &c\end{bmatrix}$
+   <img src="https://latex.codecogs.com/svg.latex?\begin{bmatrix}a&space;&b\\c&space;&d\end{bmatrix}\begin{bmatrix}0&space;&1\\1&space;&0\end{bmatrix}=&space;\begin{bmatrix}b&space;&a\\d&space;&c\end{bmatrix}" title="\begin{bmatrix}a &b\\c &d\end{bmatrix}\begin{bmatrix}0 &1\\1 &0\end{bmatrix}= \begin{bmatrix}b &a\\d &c\end{bmatrix}" />
 
    > **NOTE**: for column permutations, the permutation matrix should be multiplied from the right.
 
 The commutative law for matrices don't work!
 
-$AB \neq BA$
+<img src="https://latex.codecogs.com/svg.latex?AB&space;\neq&space;BA" title="AB \neq BA" />
 
 ## Inverse Matrices
 
 Let's consider the case where we would like to cancel out the elimination,
 
-$\begin{bmatrix}1 &0 &0\\3 &1 &0\\0 &0 &1\end{bmatrix}\begin{bmatrix}1 &0 &0\\-3 &0 &0\\0 &0 &1\end{bmatrix} = \begin{bmatrix}1 &0 &0\\0 &1 &0\\0 &0 &1\end{bmatrix}$
+<img src="https://latex.codecogs.com/svg.latex?\begin{bmatrix}1&space;&0&space;&0\\3&space;&1&space;&0\\0&space;&0&space;&1\end{bmatrix}\begin{bmatrix}1&space;&0&space;&0\\-3&space;&0&space;&0\\0&space;&0&space;&1\end{bmatrix}&space;=&space;\begin{bmatrix}1&space;&0&space;&0\\0&space;&1&space;&0\\0&space;&0&space;&1\end{bmatrix}" title="\begin{bmatrix}1 &0 &0\\3 &1 &0\\0 &0 &1\end{bmatrix}\begin{bmatrix}1 &0 &0\\-3 &0 &0\\0 &0 &1\end{bmatrix} = \begin{bmatrix}1 &0 &0\\0 &1 &0\\0 &0 &1\end{bmatrix}" />
 
 In short,
 
-$E^{-1} E = I$
+<img src="https://latex.codecogs.com/svg.latex?E^{-1}&space;E&space;=&space;I" title="E^{-1} E = I" />
 
 ## Problems
 
 **Problem 1** Solve, using the method of elimination:
 
-$\begin{aligned}x - y - z + u &= 0\\2x + 2z &= 8\\ -y -2z &= -8\\3x - 3y -2z +4u &= 7\end{aligned}$
+<img src="https://latex.codecogs.com/svg.latex?\begin{aligned}x&space;-&space;y&space;-&space;z&space;&plus;&space;u&space;&=&space;0\\2x&space;&plus;&space;2z&space;&=&space;8\\&space;-y&space;-2z&space;&=&space;-8\\3x&space;-&space;3y&space;-2z&space;&plus;4u&space;&=&space;7\end{aligned}" title="\begin{aligned}x - y - z + u &= 0\\2x + 2z &= 8\\ -y -2z &= -8\\3x - 3y -2z +4u &= 7\end{aligned}" />
 
 **Solution**
 
 Convert the system of equations (augmented) into a matrix,
 
-$\begin{bmatrix}\fbox{1} &-1 &-1 &1 &\vline &0 \\ 2 &0 &2 &0 &\vline &8\\ 0 &-1 &-2 &0 &\vline &-8\\ 3 &-3 &-2 &4 &\vline &7\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &-1 &-1 &1 &\vline &0 \\ 0 &\fbox{2} &4 &-2 &\vline &8\\ 0 &-1 &-2 &0 &\vline &-8\\ 0 &0 &1 &1 &\vline &7\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &-1 &-1 &1 &\vline &0 \\ 0 &\fbox{2} &4 &-2 &\vline &8\\ 0 &0 &0 &-1 &\vline &-4\\ 0 &0 &1 &1 &\vline &7\end{bmatrix}$
+<img src="https://latex.codecogs.com/svg.latex?\begin{bmatrix}\fbox{1}&space;&-1&space;&-1&space;&1&space;&\vline&space;&0&space;\\&space;2&space;&0&space;&2&space;&0&space;&\vline&space;&8\\&space;0&space;&-1&space;&-2&space;&0&space;&\vline&space;&-8\\&space;3&space;&-3&space;&-2&space;&4&space;&\vline&space;&7\end{bmatrix}&space;\rightarrow&space;\begin{bmatrix}\fbox{1}&space;&-1&space;&-1&space;&1&space;&\vline&space;&0&space;\\&space;0&space;&\fbox{2}&space;&4&space;&-2&space;&\vline&space;&8\\&space;0&space;&-1&space;&-2&space;&0&space;&\vline&space;&-8\\&space;0&space;&0&space;&1&space;&1&space;&\vline&space;&7\end{bmatrix}&space;\rightarrow&space;\begin{bmatrix}\fbox{1}&space;&-1&space;&-1&space;&1&space;&\vline&space;&0&space;\\&space;0&space;&\fbox{2}&space;&4&space;&-2&space;&\vline&space;&8\\&space;0&space;&0&space;&0&space;&-1&space;&\vline&space;&-4\\&space;0&space;&0&space;&1&space;&1&space;&\vline&space;&7\end{bmatrix}" title="\begin{bmatrix}\fbox{1} &-1 &-1 &1 &\vline &0 \\ 2 &0 &2 &0 &\vline &8\\ 0 &-1 &-2 &0 &\vline &-8\\ 3 &-3 &-2 &4 &\vline &7\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &-1 &-1 &1 &\vline &0 \\ 0 &\fbox{2} &4 &-2 &\vline &8\\ 0 &-1 &-2 &0 &\vline &-8\\ 0 &0 &1 &1 &\vline &7\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &-1 &-1 &1 &\vline &0 \\ 0 &\fbox{2} &4 &-2 &\vline &8\\ 0 &0 &0 &-1 &\vline &-4\\ 0 &0 &1 &1 &\vline &7\end{bmatrix}" />
 
-$\begin{bmatrix}\fbox{1} &-1 &-1 &1 &\vline &0 \\ 0 &\fbox{2} &4 &-2 &\vline &8\\ 0 &0 &\fbox{1} &1 &\vline &7\\ 0 &0 &0 &\fbox{-1} &\vline &-4\end{bmatrix} \Rightarrow -u = -4 \Rightarrow \begin{cases}\fbox{u = 4}\\z + u = 7\\z + 4 = 7 \Rightarrow \fbox{z = 3}\\ 2y + 4 * 3 - 2*4 = 8 \Rightarrow \fbox{y = 2}\\ x - 2 - 3 + 4 = 0 \Rightarrow \fbox{x = 1}\end{cases}$
+<img src="https://latex.codecogs.com/svg.latex?\begin{bmatrix}\fbox{1}&space;&-1&space;&-1&space;&1&space;&\vline&space;&0&space;\\&space;0&space;&\fbox{2}&space;&4&space;&-2&space;&\vline&space;&8\\&space;0&space;&0&space;&\fbox{1}&space;&1&space;&\vline&space;&7\\&space;0&space;&0&space;&0&space;&\fbox{-1}&space;&\vline&space;&-4\end{bmatrix}&space;\Rightarrow&space;-u&space;=&space;-4&space;\Rightarrow&space;\begin{cases}\fbox{u&space;=&space;4}\\z&space;&plus;&space;u&space;=&space;7\\z&space;&plus;&space;4&space;=&space;7&space;\Rightarrow&space;\fbox{z&space;=&space;3}\\&space;2y&space;&plus;&space;4&space;*&space;3&space;-&space;2*4&space;=&space;8&space;\Rightarrow&space;\fbox{y&space;=&space;2}\\&space;x&space;-&space;2&space;-&space;3&space;&plus;&space;4&space;=&space;0&space;\Rightarrow&space;\fbox{x&space;=&space;1}\end{cases}" title="\begin{bmatrix}\fbox{1} &-1 &-1 &1 &\vline &0 \\ 0 &\fbox{2} &4 &-2 &\vline &8\\ 0 &0 &\fbox{1} &1 &\vline &7\\ 0 &0 &0 &\fbox{-1} &\vline &-4\end{bmatrix} \Rightarrow -u = -4 \Rightarrow \begin{cases}\fbox{u = 4}\\z + u = 7\\z + 4 = 7 \Rightarrow \fbox{z = 3}\\ 2y + 4 * 3 - 2*4 = 8 \Rightarrow \fbox{y = 2}\\ x - 2 - 3 + 4 = 0 \Rightarrow \fbox{x = 1}\end{cases}" />
 
-**Problem 2** Find the triangular matrix $E$ that reduces "Pascal's matrix" to a smaller Pascal:
+**Problem 2** Find the triangular matrix <img src="https://latex.codecogs.com/svg.latex?E" title="E" /> that reduces "Pascal's matrix" to a smaller Pascal:
 
-$E\begin{bmatrix}1 &0 &0 &0\\1 &1 &0 &0\\1 &2 &1 &0\\1 &3 &3 &1\end{bmatrix} = \begin{bmatrix}1 &0 &0 &0\\0 &1 &0 &0\\ 0 &1 &1 &0\\0 &1 &2 &1\end{bmatrix}$.
+<img src="https://latex.codecogs.com/svg.latex?E\begin{bmatrix}1&space;&0&space;&0&space;&0\\1&space;&1&space;&0&space;&0\\1&space;&2&space;&1&space;&0\\1&space;&3&space;&3&space;&1\end{bmatrix}&space;=&space;\begin{bmatrix}1&space;&0&space;&0&space;&0\\0&space;&1&space;&0&space;&0\\&space;0&space;&1&space;&1&space;&0\\0&space;&1&space;&2&space;&1\end{bmatrix}" title="E\begin{bmatrix}1 &0 &0 &0\\1 &1 &0 &0\\1 &2 &1 &0\\1 &3 &3 &1\end{bmatrix} = \begin{bmatrix}1 &0 &0 &0\\0 &1 &0 &0\\ 0 &1 &1 &0\\0 &1 &2 &1\end{bmatrix}" />.
 
-What matrix $M$ (multiplying several $E$'s') reduces Pascal all the way to $I$?
+What matrix <img src="https://latex.codecogs.com/svg.latex?M" title="M" /> (multiplying several <img src="https://latex.codecogs.com/svg.latex?E" title="E" />'s') reduces Pascal all the way to <img src="https://latex.codecogs.com/svg.latex?I" title="I" />?
 
-**Solution**
+### Solution
 
 Starting from the identity matrix,
 
-$\begin{bmatrix}1 &0 &0 &0\\0 &1 &0 &0\\0 &0 &1 &0\\0 &0 &0 &1\end{bmatrix}$
+<img src="https://latex.codecogs.com/svg.latex?\begin{bmatrix}1&space;&0&space;&0&space;&0\\0&space;&1&space;&0&space;&0\\0&space;&0&space;&1&space;&0\\0&space;&0&space;&0&space;&1\end{bmatrix}" title="\begin{bmatrix}1 &0 &0 &0\\0 &1 &0 &0\\0 &0 &1 &0\\0 &0 &0 &1\end{bmatrix}" />
 
 We have the triangular matrix $E$ that the reduces the Pascal matrix to a smaller Pascal is,
 
-$\begin{bmatrix}1 &0 &0 &0\\-1 &1 &0 &0\\0 &-1 &1 &0\\0 &0 &-1 &1\end{bmatrix}$
+<img src="https://latex.codecogs.com/svg.latex?\begin{bmatrix}1&space;&0&space;&0&space;&0\\-1&space;&1&space;&0&space;&0\\0&space;&-1&space;&1&space;&0\\0&space;&0&space;&-1&space;&1\end{bmatrix}" title="\begin{bmatrix}1 &0 &0 &0\\-1 &1 &0 &0\\0 &-1 &1 &0\\0 &0 &-1 &1\end{bmatrix}" />
 
 To further convert the smaller Pascal to identity matrix, we need to left multiply another matrix,
 
-$\begin{bmatrix}1 &0 &0 &0\\0 &1 &0 &0\\0 &-1 &1 &0\\0 &0 &-2 &1\end{bmatrix}$
+<img src="https://latex.codecogs.com/svg.latex?\begin{bmatrix}1&space;&0&space;&0&space;&0\\0&space;&1&space;&0&space;&0\\0&space;&-1&space;&1&space;&0\\0&space;&0&space;&-2&space;&1\end{bmatrix}" title="\begin{bmatrix}1 &0 &0 &0\\0 &1 &0 &0\\0 &-1 &1 &0\\0 &0 &-2 &1\end{bmatrix}" />
 
-Multiply the two matrices to obtain $M$,
+Multiply the two matrices to obtain <img src="https://latex.codecogs.com/svg.latex?M" title="M" />,
 
-$M = \begin{bmatrix}1 &0 &0 &0\\0 &1 &0 &0\\0 &-1 &1 &0\\0 &0 &-2 &1\end{bmatrix}\begin{bmatrix}1 &0 &0 &0\\-1 &1 &0 &0\\0 &-1 &1 &0\\0 &0 &-1 &1\end{bmatrix} = \begin{bmatrix}1 &0 &0 &0\\-1 &1 &0 &0\\1 &-2 &1 &0\\0 &3 &-3 &1\end{bmatrix}$
+<img src="https://latex.codecogs.com/svg.latex?M&space;=&space;\begin{bmatrix}1&space;&0&space;&0&space;&0\\0&space;&1&space;&0&space;&0\\0&space;&-1&space;&1&space;&0\\0&space;&0&space;&-2&space;&1\end{bmatrix}\begin{bmatrix}1&space;&0&space;&0&space;&0\\-1&space;&1&space;&0&space;&0\\0&space;&-1&space;&1&space;&0\\0&space;&0&space;&-1&space;&1\end{bmatrix}&space;=&space;\begin{bmatrix}1&space;&0&space;&0&space;&0\\-1&space;&1&space;&0&space;&0\\1&space;&-2&space;&1&space;&0\\0&space;&3&space;&-3&space;&1\end{bmatrix}" title="M = \begin{bmatrix}1 &0 &0 &0\\0 &1 &0 &0\\0 &-1 &1 &0\\0 &0 &-2 &1\end{bmatrix}\begin{bmatrix}1 &0 &0 &0\\-1 &1 &0 &0\\0 &-1 &1 &0\\0 &0 &-1 &1\end{bmatrix} = \begin{bmatrix}1 &0 &0 &0\\-1 &1 &0 &0\\1 &-2 &1 &0\\0 &3 &-3 &1\end{bmatrix}" />
 
-Since $M$ reduces the Pascal matrix to $I$, $M$ is the **inverse** matrix of the original Pascal matrix.
+Since <img src="https://latex.codecogs.com/svg.latex?M" title="M" /> reduces the Pascal matrix to <img src="https://latex.codecogs.com/svg.latex?I" title="I" />, <img src="https://latex.codecogs.com/svg.latex?M" title="M" /> is the **inverse** matrix of the original Pascal matrix.
 
 ## Implementation
 
