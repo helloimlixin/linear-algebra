@@ -30,8 +30,6 @@ def gauss_elim(matrix):
     2. Organize the matrix into a nice form where all the zeros are pushed to the
         lower left corner.
     3. Loop through the rows, find the pidvot entries and perform row eliminations.py
-    
-    If elimination succeeds, it will print out the resulting matrix and return it.
 
     NOTE: here all the entries of the matrix will be converted to float-point
     numbers automatically for the sake of computation.
@@ -66,15 +64,16 @@ def gauss_elim(matrix):
             
     print("Elimination succeeded:)\n")
 
-    # TODO: deal with the cases where the elimination fails.
-
     print_matrix(matrix)
 
     return matrix
 
 def solve(matrix, b):
     """Solve a system of linear equation by first augmenting the matrix then do the
-    Gaussian Elimination with respect to the matrix before augmentation.
+    Gaussian Elimination with respect to the matrix before augmentation. The computation is done by first augmenting the
+    matrix with the column vector constructed from the right hand side of the equations, then performing the Guassian
+    Elimination over the coefficient matrix, then doing the back substitution to get the solutions to the system of
+    linear equations.
 
     Args:
         matrix ([[], [], ...]): a nested list representing the coefficient matrix of the system of the linear equation
@@ -82,12 +81,16 @@ def solve(matrix, b):
 
     Returns:
         [[], [], ...]: a nested list representing the matrix with augmented column after elimination
+        []: an ordered list containing the solutions of linear equations
+    
+    NOTE: the solver will quit and not be able to solve the equation upon encountering a zero pivot.
     """
-    augmented_matrix = augment(matrix, b)
-
     # Get the matrix dimension.
     nrows = len(matrix)
     ncols = len(matrix[0])
+
+    augmented_matrix = augment(matrix, b)
+    X = [] # initialize a list to store the solutions
 
     # Reorganize the matrix to move the zeroes to lower-left corner.
     matrix = organize(matrix)
@@ -97,15 +100,29 @@ def solve(matrix, b):
         row = augmented_matrix[i]
         for j in range(i):
             if row[j] != 0:
-                row_elim(row, augmented_matrix[j], ncols, j + 1)
-            
-    print("Elimination succeeded:)\n")
+                row_elim(row, augmented_matrix[j], ncols + 1, j + 1)
 
     # TODO: deal with the cases where the elimination fails.
 
+    print("Elimination succeeded! The augmented matrix:")
     print_matrix(augmented_matrix)
 
-    return augmented_matrix
+    # Find the solutions using the augmented matrix after elimination.
+    for i in range(nrows - 1, -1, -1):
+        if matrix[i][ncols - nrows + i] == 0:
+            print("Zero numerator encountered, the equation is not solvable.")
+            return
+        LHS_sum = 0.0
+        for k in range(nrows - 1 - i):
+            LHS_sum += augmented_matrix[i][i + k + 1] * X[k]
+        coefficient = augmented_matrix[i][ncols - nrows + i]
+        X = [(augmented_matrix[i][-1] - LHS_sum) / coefficient] + X
+
+    print("Computation succeeded! Solutions:")
+    for i in range(nrows):
+        print(f"X{i + 1} = {X[i]:.2f}")
+
+    return augmented_matrix, X
 
 
 def augment(matrix, col_vector):
@@ -130,9 +147,7 @@ def augment(matrix, col_vector):
 
 def row_elim(row1, row2, ncols, i):
     """Helper function to perform the row elimination. The result will knock out an
-    element in the target row with the specified index. This will only work if the
-    corresponding entry in the row2 vector is not zero. Further modification might
-    be required.
+    element in the target row with the specified index.
 
     Args:
         row1 ([]): list representing the target row for elimination
@@ -140,7 +155,6 @@ def row_elim(row1, row2, ncols, i):
         ncols (integer): number of columns
         i (integer): index of interest to knock out
     """
-    # TODO: deal with the case where the corresponding entry in row2 vector is 0.
 
     scale = row1[i - 1] / row2[i - 1]
     for j in range(ncols):
@@ -258,6 +272,7 @@ def count_leading_zeros(row_vec):
 
 # Driver code.
 if __name__ == "__main__":
+    # Test examples.
     A = [[1, 2, 1], [3, 8, 1], [0, 4, -4]]
     B = [[1, 2, 1], [3, 8, 1], [0, 4, 1]]
     C = [[0, 4, 1], [3, 8, 1], [1, 2, 1]]
@@ -268,4 +283,4 @@ if __name__ == "__main__":
                               # Elimination will convert a Pascal Matrix to an 
                               # Identity Matrix!
 
-    solve(B, [[2], [12], [2]])
+    solve(B, [[2], [12], [2]]) # X1 = 2, X2 = 1, X3 = -2
