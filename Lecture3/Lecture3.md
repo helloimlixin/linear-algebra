@@ -39,7 +39,7 @@ Pivot becomes zero,
 
 <img src="https://latex.codecogs.com/svg.latex?A&space;=&space;\begin{bmatrix}\fbox{1}&space;&2&space;&1\\&space;3&space;&8&space;&1\\&space;0&space;&4&space;&-4\end{bmatrix}&space;\rightarrow&space;\begin{bmatrix}\fbox{1}&space;&2&space;&1\\&space;0&space;&\fbox{2}&space;&-2\\&space;0&space;&4&space;&-4\end{bmatrix}&space;\rightarrow&space;\begin{bmatrix}\fbox{1}&space;&2&space;&1\\&space;0&space;&\fbox{2}&space;&-2\\&space;0&space;&0&space;&\fbox{0}\end{bmatrix}" title="A = \begin{bmatrix}\fbox{1} &2 &1\\ 3 &8 &1\\ 0 &4 &-4\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &2 &1\\ 0 &\fbox{2} &-2\\ 0 &4 &-4\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &2 &1\\ 0 &\fbox{2} &-2\\ 0 &0 &\fbox{0}\end{bmatrix}" />
 
-Now let's consider $Ax = b$ and we ***augment*** the matrix $A$ by an additional column representing column vector $b$.
+Now let's consider <img src="https://latex.codecogs.com/svg.latex?Ax&space;=&space;b" title="Ax = b" /> and we ***augment*** the matrix <img src="https://latex.codecogs.com/svg.latex?A" title="A" /> by an additional column representing column vector <img src="https://latex.codecogs.com/svg.latex?b" title="b" />.
 
 <img src="https://latex.codecogs.com/svg.latex?[A&space;|&space;b]&space;=&space;\begin{bmatrix}\fbox{1}&space;&2&space;&1&space;&|&space;&2\\&space;3&space;&8&space;&1&space;&|&space;&12\\&space;0&space;&4&space;&1&space;&|&space;&2\end{bmatrix}&space;\rightarrow&space;\begin{bmatrix}\fbox{1}&space;&2&space;&1&space;&|&space;&2\\&space;0&space;&\fbox{2}&space;&-2&space;&|&space;&6\\&space;0&space;&4&space;&1&space;&|&space;&2\end{bmatrix}&space;\rightarrow&space;\begin{bmatrix}\fbox{1}&space;&2&space;&1&space;&|&space;&2\\&space;0&space;&\fbox{2}&space;&-2&space;&|&space;&6\\&space;0&space;&0&space;&\fbox{5}&space;&|&space;&-10\end{bmatrix}" title="[A | b] = \begin{bmatrix}\fbox{1} &2 &1 &| &2\\ 3 &8 &1 &| &12\\ 0 &4 &1 &| &2\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &2 &1 &| &2\\ 0 &\fbox{2} &-2 &| &6\\ 0 &4 &1 &| &2\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &2 &1 &| &2\\ 0 &\fbox{2} &-2 &| &6\\ 0 &0 &\fbox{5} &| &-10\end{bmatrix}" />
 
@@ -55,7 +55,7 @@ Let's first take the original matrix,
 
 <img src="https://latex.codecogs.com/svg.latex?\begin{bmatrix}1&space;&2&space;&1\\3&space;&8&space;&1\\0&space;&4&space;&1\end{bmatrix}" title="\begin{bmatrix}1 &2 &1\\3 &8 &1\\0 &4 &1\end{bmatrix}" />
 
-> The multiplication of a matrix $A$ and a column vector is the linear combination of the columns of the matrix $A$,
+> The multiplication of a matrix <img src="https://latex.codecogs.com/svg.latex?A" title="A" /> and a column vector is the linear combination of the columns of the matrix <img src="https://latex.codecogs.com/svg.latex?A" title="A" />,
 >
 > <img src="https://latex.codecogs.com/svg.latex?\begin{bmatrix}\vline&space;&\vline&space;&\vline\\&space;col1&space;&col2&space;&col3\\&space;\vline&space;&\vline&space;&\vline\end{bmatrix}\begin{bmatrix}3\\4\\5\end{bmatrix}&space;=&space;3&space;\times&space;col1&space;&plus;&space;4&space;\times&space;col2&space;&plus;&space;5&space;\times&space;col3" title="\begin{bmatrix}\vline &\vline &\vline\\ col1 &col2 &col3\\ \vline &\vline &\vline\end{bmatrix}\begin{bmatrix}3\\4\\5\end{bmatrix} = 3 \times col1 + 4 \times col2 + 5 \times col3" />
 >
