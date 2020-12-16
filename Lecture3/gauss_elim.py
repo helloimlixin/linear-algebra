@@ -72,6 +72,62 @@ def gauss_elim(matrix):
 
     return matrix
 
+def solve(matrix, b):
+    """Solve a system of linear equation by first augmenting the matrix then do the
+    Gaussian Elimination with respect to the matrix before augmentation.
+
+    Args:
+        matrix ([[], [], ...]): a nested list representing the coefficient matrix of the system of the linear equation
+        b ([[], [], ...]): a nested list representing the column vector for the right hand sides of the linear equations
+
+    Returns:
+        [[], [], ...]: a nested list representing the matrix with augmented column after elimination
+    """
+    augmented_matrix = augment(matrix, b)
+
+    # Get the matrix dimension.
+    nrows = len(matrix)
+    ncols = len(matrix[0])
+
+    # Reorganize the matrix to move the zeroes to lower-left corner.
+    matrix = organize(matrix)
+
+    # Loop through the rows and perform the row eliminations.
+    for i in range(1, nrows):
+        row = augmented_matrix[i]
+        for j in range(i):
+            if row[j] != 0:
+                row_elim(row, augmented_matrix[j], ncols, j + 1)
+            
+    print("Elimination succeeded:)\n")
+
+    # TODO: deal with the cases where the elimination fails.
+
+    print_matrix(augmented_matrix)
+
+    return augmented_matrix
+
+
+def augment(matrix, col_vector):
+    """Helper function to augment the given matrix by concatenating a column vector
+    on the right side.
+
+    Args:
+        matrix ([[], [], ...]): a nested list representing the original matrix
+        col_vector ([[], [], ...]): a nested list representing a column vector
+
+    Returns:
+        [[], [], ...]: a nested list representing the augmented matrix
+    """
+    augmented = []
+
+    for i in range(len(matrix)):
+        tmp = matrix[i]
+        tmp.append(col_vector[i][0])
+        augmented.append(tmp)
+    
+    return augmented
+
 def row_elim(row1, row2, ncols, i):
     """Helper function to perform the row elimination. The result will knock out an
     element in the target row with the specified index. This will only work if the
@@ -211,3 +267,5 @@ if __name__ == "__main__":
     gauss_elim(Pascal_Matrix) # it's very interesting to see that the Gaussian 
                               # Elimination will convert a Pascal Matrix to an 
                               # Identity Matrix!
+
+    solve(B, [[2], [12], [2]])
