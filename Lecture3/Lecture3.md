@@ -6,15 +6,13 @@ This lecture is about solving systems of linear equation, while the method of so
 
 <img src="https://latex.codecogs.com/svg.latex?\begin{aligned}x&space;&plus;&space;2y&space;&plus;&space;z&space;&=&space;2\\&space;3x&space;&plus;&space;8y&space;&plus;&space;z&space;&=&space;12\\&space;4y&space;&plus;&space;z&space;&=&space;12\end{aligned}" title="\begin{aligned}x + 2y + z &= 2\\ 3x + 8y + z &= 12\\ 4y + z &= 12\end{aligned}" />
 
-$$\begin{aligned}x + 2y + z &= 2\\ 3x + 8y + z &= 12\\ 4y + z &= 12\end{aligned}$$
-
 We have the following coefficient matrix,
 
-$A = \begin{bmatrix}1 &2 &1\\ 3 &8 &1\\ 0 &4 &1\end{bmatrix}$,
+<img src="https://latex.codecogs.com/svg.latex?A&space;=&space;\begin{bmatrix}1&space;&2&space;&1\\&space;3&space;&8&space;&1\\&space;0&space;&4&space;&1\end{bmatrix}" title="A = \begin{bmatrix}1 &2 &1\\ 3 &8 &1\\ 0 &4 &1\end{bmatrix}" />
 
 and the system of linear equations can be written in the following matrix form,
 
-$Ax = b$
+<img src="https://latex.codecogs.com/svg.latex?Ax&space;=&space;b" title="Ax = b" />
 
 ## Overview
 
@@ -29,49 +27,49 @@ $Ax = b$
 
 One intuitive idea of elimination is to knock out (multiply and subtract) the term associated with each variable one at a time, to do this, let's first pick the first "pivot" as shown in the solid box below in the matrix $A$,
 
-$A = \begin{bmatrix}\fbox{1} &2 &1\\ 3 &8 &1\\ 0 &4 &1\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &2 &1\\ 0 &2 &-2\\ 0 &4 &1\end{bmatrix}$.
+<img src="https://latex.codecogs.com/svg.latex?A&space;=&space;\begin{bmatrix}\fbox{1}&space;&2&space;&1\\&space;3&space;&8&space;&1\\&space;0&space;&4&space;&1\end{bmatrix}&space;\rightarrow&space;\begin{bmatrix}\fbox{1}&space;&2&space;&1\\&space;0&space;&2&space;&-2\\&space;0&space;&4&space;&1\end{bmatrix}" title="A = \begin{bmatrix}\fbox{1} &2 &1\\ 3 &8 &1\\ 0 &4 &1\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &2 &1\\ 0 &2 &-2\\ 0 &4 &1\end{bmatrix}" />
 
 Now we have the second pivot,
 
-$A = \begin{bmatrix}\fbox{1} &2 &1\\ 3 &8 &1\\ 0 &4 &1\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &2 &1\\ 0 &\fbox{2} &-2\\ 0 &4 &1\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &2 &1\\ 0 &\fbox{2} &-2\\ 0 &0 &\fbox{5}\end{bmatrix} = \mathcal{U} \text{ (Upper-Triangular)}$.
+<img src="https://latex.codecogs.com/svg.latex?A&space;=&space;\begin{bmatrix}\fbox{1}&space;&2&space;&1\\&space;3&space;&8&space;&1\\&space;0&space;&4&space;&1\end{bmatrix}&space;\rightarrow&space;\begin{bmatrix}\fbox{1}&space;&2&space;&1\\&space;0&space;&\fbox{2}&space;&-2\\&space;0&space;&4&space;&1\end{bmatrix}&space;\rightarrow&space;\begin{bmatrix}\fbox{1}&space;&2&space;&1\\&space;0&space;&\fbox{2}&space;&-2\\&space;0&space;&0&space;&\fbox{5}\end{bmatrix}&space;=&space;\mathcal{U}&space;\text{&space;(Upper-Triangular)}" title="A = \begin{bmatrix}\fbox{1} &2 &1\\ 3 &8 &1\\ 0 &4 &1\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &2 &1\\ 0 &\fbox{2} &-2\\ 0 &4 &1\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &2 &1\\ 0 &\fbox{2} &-2\\ 0 &0 &\fbox{5}\end{bmatrix} = \mathcal{U} \text{ (Upper-Triangular)}" />
 
 **Question: How could this fail? (By failing to come up with 3 pivots)**
 
 Pivot becomes zero,
 
-$A = \begin{bmatrix}\fbox{1} &2 &1\\ 3 &8 &1\\ 0 &4 &-4\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &2 &1\\ 0 &\fbox{2} &-2\\ 0 &4 &-4\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &2 &1\\ 0 &\fbox{2} &-2\\ 0 &0 &\fbox{0}\end{bmatrix}$
+<img src="https://latex.codecogs.com/svg.latex?A&space;=&space;\begin{bmatrix}\fbox{1}&space;&2&space;&1\\&space;3&space;&8&space;&1\\&space;0&space;&4&space;&-4\end{bmatrix}&space;\rightarrow&space;\begin{bmatrix}\fbox{1}&space;&2&space;&1\\&space;0&space;&\fbox{2}&space;&-2\\&space;0&space;&4&space;&-4\end{bmatrix}&space;\rightarrow&space;\begin{bmatrix}\fbox{1}&space;&2&space;&1\\&space;0&space;&\fbox{2}&space;&-2\\&space;0&space;&0&space;&\fbox{0}\end{bmatrix}" title="A = \begin{bmatrix}\fbox{1} &2 &1\\ 3 &8 &1\\ 0 &4 &-4\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &2 &1\\ 0 &\fbox{2} &-2\\ 0 &4 &-4\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &2 &1\\ 0 &\fbox{2} &-2\\ 0 &0 &\fbox{0}\end{bmatrix}" />
 
 Now let's consider $Ax = b$ and we ***augment*** the matrix $A$ by an additional column representing column vector $b$.
 
-$[A | b] = \begin{bmatrix}\fbox{1} &2 &1 &| &2\\ 3 &8 &1 &| &12\\ 0 &4 &1 &| &2\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &2 &1 &| &2\\ 0 &\fbox{2} &-2 &| &6\\ 0 &4 &1 &| &2\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &2 &1 &| &2\\ 0 &\fbox{2} &-2 &| &6\\ 0 &0 &\fbox{5} &| &-10\end{bmatrix} = [\mathcal{U} \vline c]$
+<img src="https://latex.codecogs.com/svg.latex?[A&space;|&space;b]&space;=&space;\begin{bmatrix}\fbox{1}&space;&2&space;&1&space;&|&space;&2\\&space;3&space;&8&space;&1&space;&|&space;&12\\&space;0&space;&4&space;&1&space;&|&space;&2\end{bmatrix}&space;\rightarrow&space;\begin{bmatrix}\fbox{1}&space;&2&space;&1&space;&|&space;&2\\&space;0&space;&\fbox{2}&space;&-2&space;&|&space;&6\\&space;0&space;&4&space;&1&space;&|&space;&2\end{bmatrix}&space;\rightarrow&space;\begin{bmatrix}\fbox{1}&space;&2&space;&1&space;&|&space;&2\\&space;0&space;&\fbox{2}&space;&-2&space;&|&space;&6\\&space;0&space;&0&space;&\fbox{5}&space;&|&space;&-10\end{bmatrix}" title="[A | b] = \begin{bmatrix}\fbox{1} &2 &1 &| &2\\ 3 &8 &1 &| &12\\ 0 &4 &1 &| &2\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &2 &1 &| &2\\ 0 &\fbox{2} &-2 &| &6\\ 0 &4 &1 &| &2\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &2 &1 &| &2\\ 0 &\fbox{2} &-2 &| &6\\ 0 &0 &\fbox{5} &| &-10\end{bmatrix}" />
 
 ## Back-Substitution
 
 Back-substitute the resulting matrices into the system of linear equations,
 
-$\begin{aligned}x + 2y + z &= 2\\ 2y - 2z &= 6\\ 5z &= -10\end{aligned} \Rightarrow \begin{cases}x = 2\\ y = 1\\ z = -2\end{cases}$
+<img src="https://latex.codecogs.com/svg.latex?\begin{aligned}x&space;&plus;&space;2y&space;&plus;&space;z&space;&=&space;2\\&space;2y&space;-&space;2z&space;&=&space;6\\&space;5z&space;&=&space;-10\end{aligned}&space;\Rightarrow&space;\begin{cases}x&space;=&space;2\\&space;y&space;=&space;1\\&space;z&space;=&space;-2\end{cases}" title="\begin{aligned}x + 2y + z &= 2\\ 2y - 2z &= 6\\ 5z &= -10\end{aligned} \Rightarrow \begin{cases}x = 2\\ y = 1\\ z = -2\end{cases}" />
 
 ## Elimination Matrices
 
 Let's first take the original matrix,
 
-$\begin{bmatrix}1 &2 &1\\3 &8 &1\\0 &4 &1\end{bmatrix}$
+<img src="https://latex.codecogs.com/svg.latex?\begin{bmatrix}1&space;&2&space;&1\\3&space;&8&space;&1\\0&space;&4&space;&1\end{bmatrix}" title="\begin{bmatrix}1 &2 &1\\3 &8 &1\\0 &4 &1\end{bmatrix}" />
 
 > The multiplication of a matrix $A$ and a column vector is the linear combination of the columns of the matrix $A$,
 >
-> $\begin{bmatrix}\vline &\vline &\vline\\ col1 &col2 &col3\\ \vline &\vline &\vline\end{bmatrix}\begin{bmatrix}3\\4\\5\end{bmatrix} = 3 \times col1 + 4 \times col2 + 5 \times col3$
+> <img src="https://latex.codecogs.com/svg.latex?\begin{bmatrix}\vline&space;&\vline&space;&\vline\\&space;col1&space;&col2&space;&col3\\&space;\vline&space;&\vline&space;&\vline\end{bmatrix}\begin{bmatrix}3\\4\\5\end{bmatrix}&space;=&space;3&space;\times&space;col1&space;&plus;&space;4&space;\times&space;col2&space;&plus;&space;5&space;\times&space;col3" title="\begin{bmatrix}\vline &\vline &\vline\\ col1 &col2 &col3\\ \vline &\vline &\vline\end{bmatrix}\begin{bmatrix}3\\4\\5\end{bmatrix} = 3 \times col1 + 4 \times col2 + 5 \times col3" />
 >
 > Here we have,
 >
-> matrix $\times$ column $=$ column
+> matrix <img src="https://latex.codecogs.com/svg.latex?\times" title="\times" /> column <img src="https://latex.codecogs.com/svg.latex?=" title="=" /> column
 
 In parallel, we have the product of a row vector and a matrix,
 
-$\begin{bmatrix}1 &2 &7\end{bmatrix}\begin{bmatrix}- &row1 &-\\- &row2 &-\\- &row3 &-\end{bmatrix} = 1 \times row1 + 2 \times row2 + 7 \times row3$
+<img src="https://latex.codecogs.com/svg.latex?\begin{bmatrix}1&space;&2&space;&7\end{bmatrix}\begin{bmatrix}-&space;&row1&space;&-\\-&space;&row2&space;&-\\-&space;&row3&space;&-\end{bmatrix}&space;=&space;1&space;\times&space;row1&space;&plus;&space;2&space;\times&space;row2&space;&plus;&space;7&space;\times&space;row3" title="\begin{bmatrix}1 &2 &7\end{bmatrix}\begin{bmatrix}- &row1 &-\\- &row2 &-\\- &row3 &-\end{bmatrix} = 1 \times row1 + 2 \times row2 + 7 \times row3" />
 
 > Here we have,
 >
-> row $\times$ matrix $=$ row
+> row <img src="https://latex.codecogs.com/svg.latex?\times" title="\times" /> matrix <img src="https://latex.codecogs.com/svg.latex?=" title="=" /> row
 
 ### Reproducing Matrix Elimination
 
@@ -167,7 +165,7 @@ Since $M$ reduces the Pascal matrix to $I$, $M$ is the **inverse** matrix of the
 
 ## Implementation
 
-**Python Version**
+### Python Version
 
 ```python
 def gauss_elim(matrix):
