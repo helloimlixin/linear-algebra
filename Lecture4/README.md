@@ -22,7 +22,7 @@ Let's take an element in the resulting matrix <img src="https://latex.codecogs.c
 
 <img src="https://latex.codecogs.com/svg.latex?A:&space;m&space;\times&space;n,&space;B:&space;n&space;\times&space;p,&space;C&space;=&space;AB:&space;m&space;\times&space;p" title="A: m \times n, B: n \times p, C = AB: m \times p" />
 
-Columns of $C$ are combinations of columns of $A$, resulting from the operation where matrix $A$ times a column vector in matrix $B$.
+Columns of <img src="https://latex.codecogs.com/svg.latex?C" title="C" /> are combinations of columns of <img src="https://latex.codecogs.com/svg.latex?A" title="A" />, resulting from the operation where matrix $A$ times a column vector in matrix <img src="https://latex.codecogs.com/svg.latex?B" title="B" />.
 
 **Third Way**
 
