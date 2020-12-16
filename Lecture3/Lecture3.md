@@ -31,7 +31,7 @@ One intuitive idea of elimination is to knock out (multiply and subtract) the te
 
 Now we have the second pivot,
 
-<img src="https://latex.codecogs.com/svg.latex?A&space;=&space;\begin{bmatrix}\fbox{1}&space;&2&space;&1\\&space;3&space;&8&space;&1\\&space;0&space;&4&space;&1\end{bmatrix}&space;\rightarrow&space;\begin{bmatrix}\fbox{1}&space;&2&space;&1\\&space;0&space;&\fbox{2}&space;&-2\\&space;0&space;&4&space;&1\end{bmatrix}&space;\rightarrow&space;\begin{bmatrix}\fbox{1}&space;&2&space;&1\\&space;0&space;&\fbox{2}&space;&-2\\&space;0&space;&0&space;&\fbox{5}\end{bmatrix}&space;=&space;\mathcal{U}&space;\text{&space;(Upper-Triangular)}" title="A = \begin{bmatrix}\fbox{1} &2 &1\\ 3 &8 &1\\ 0 &4 &1\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &2 &1\\ 0 &\fbox{2} &-2\\ 0 &4 &1\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &2 &1\\ 0 &\fbox{2} &-2\\ 0 &0 &\fbox{5}\end{bmatrix} = \mathcal{U} \text{ (Upper-Triangular)}" />
+<img src="https://latex.codecogs.com/svg.latex?A&space;=&space;\begin{bmatrix}\fbox{1}&space;&2&space;&1\\3&space;&8&space;&1\\0&space;&4&space;&1\end{bmatrix}&space;\rightarrow&space;\begin{bmatrix}\fbox{1}&space;&2&space;&1\\0&space;&\fbox{2}&space;&-2\\0&space;&4&space;&1\end{bmatrix}&space;\rightarrow&space;\begin{bmatrix}\fbox{1}&space;&2&space;&1\\0&space;&\fbox{2}&space;&-2\\0&space;&0&space;&\fbox{5}\end{bmatrix}" title="A = \begin{bmatrix}\fbox{1} &2 &1\\3 &8 &1\\0 &4 &1\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &2 &1\\0 &\fbox{2} &-2\\0 &4 &1\end{bmatrix} \rightarrow \begin{bmatrix}\fbox{1} &2 &1\\0 &\fbox{2} &-2\\0 &0 &\fbox{5}\end{bmatrix}" />
 
 **Question: How could this fail? (By failing to come up with 3 pivots)**
 
@@ -218,4 +218,3 @@ def gauss_elim(matrix):
 
     return matrix
 ```
-
