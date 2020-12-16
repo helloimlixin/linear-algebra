@@ -3,24 +3,24 @@
 ## Overview
 
 - Matrix Multiplication
-- Inverse of $A, AB, A^T$
-- Gauss-Jordan Method to Find $A^{-1}$
+- Inverse of <img src="https://latex.codecogs.com/svg.latex?A,&space;AB,&space;A^T" title="A, AB, A^T" />
+- Gauss-Jordan Method to Find <img src="https://latex.codecogs.com/svg.latex?A^{-1}" title="A^{-1}" />
 
 ## Matrix Multiplication
 
-$A \cdot B = C$
+<img src="https://latex.codecogs.com/svg.latex?A&space;\cdot&space;B&space;=&space;C" title="A \cdot B = C" />
 
 **First Way**
 
-Let's take an element in the resulting matrix $C$ for instance, say, $C_{34}$, we have it's a result of the dot product of the row-3 vector in matrix $A$ and the column-4 vector in matrix $B$,
+Let's take an element in the resulting matrix <img src="https://latex.codecogs.com/svg.latex?C" title="C" /> for instance, say, <img src="https://latex.codecogs.com/svg.latex?C_{34}" title="C_{34}" />, we have it's a result of the dot product of the row-3 vector in matrix <img src="https://latex.codecogs.com/svg.latex?A" title="A" /> and the column-4 vector in matrix <img src="https://latex.codecogs.com/svg.latex?B" title="B" />,
 
-$$\begin{aligned}C_{34} &= (\text{row-3 of A}) \cdot (\text{column-4 of B})\\ &= a_{31} \times b_{14} + a_{32} \times b_{24} + \cdots\\ &= \sum_{k = 1}^n a_{3k}b_{k4}\end{aligned}$$
+<img src="https://latex.codecogs.com/svg.latex?\begin{aligned}C_{34}&space;&=&space;(\text{row-3&space;of&space;A})&space;\cdot&space;(\text{column-4&space;of&space;B})\\&space;&=&space;a_{31}&space;\times&space;b_{14}&space;&plus;&space;a_{32}&space;\times&space;b_{24}&space;&plus;&space;\cdots\\&space;&=&space;\sum_{k&space;=&space;1}^n&space;a_{3k}b_{k4}\end{aligned}" title="\begin{aligned}C_{34} &= (\text{row-3 of A}) \cdot (\text{column-4 of B})\\ &= a_{31} \times b_{14} + a_{32} \times b_{24} + \cdots\\ &= \sum_{k = 1}^n a_{3k}b_{k4}\end{aligned}" />
 
 **Dimensions**
 
 **Second Way**
 
-$A: m \times n, B: n \times p, C = AB: m \times p$
+<img src="https://latex.codecogs.com/svg.latex?A:&space;m&space;\times&space;n,&space;B:&space;n&space;\times&space;p,&space;C&space;=&space;AB:&space;m&space;\times&space;p" title="A: m \times n, B: n \times p, C = AB: m \times p" />
 
 Columns of $C$ are combinations of columns of $A$, resulting from the operation where matrix $A$ times a column vector in matrix $B$.
 
@@ -84,7 +84,7 @@ $\begin{aligned}\begin{bmatrix}1 & 3\\ 2 & 7\end{bmatrix}\begin{bmatrix}a \\ b\e
 
 Augmented Matrix
 
-$[A \vline I] = \begin{bmatrix}1 & 2 &\vline &1 & 0\\3 & 7 &\vline &0 & 1\end{bmatrix}\rightarrow \begin{bmatrix}1 &3 &1 &0\\0 &1 &-2 &1\end{bmatrix}\rightarrow \begin{bmatrix}1 &0 &7 &-3\\0 &1 &-2 &1\end{bmatrix} = [I \vline A^{-1}]$
+<img src="https://latex.codecogs.com/svg.latex?[A&space;\vline&space;I]&space;=&space;\begin{bmatrix}1&space;&&space;2&space;&\vline&space;&1&space;&&space;0\\3&space;&&space;7&space;&\vline&space;&0&space;&&space;1\end{bmatrix}\rightarrow&space;\begin{bmatrix}1&space;&3&space;&1&space;&0\\0&space;&1&space;&-2&space;&1\end{bmatrix}\rightarrow&space;\begin{bmatrix}1&space;&0&space;&7&space;&-3\\0&space;&1&space;&-2&space;&1\end{bmatrix}&space;=&space;[I&space;\vline&space;A^{-1}]" title="[A \vline I] = \begin{bmatrix}1 & 2 &\vline &1 & 0\\3 & 7 &\vline &0 & 1\end{bmatrix}\rightarrow \begin{bmatrix}1 &3 &1 &0\\0 &1 &-2 &1\end{bmatrix}\rightarrow \begin{bmatrix}1 &0 &7 &-3\\0 &1 &-2 &1\end{bmatrix} = [I \vline A^{-1}]" />
 
 It's very simple to prove, suppose we have an elimination matrix such that,
 
