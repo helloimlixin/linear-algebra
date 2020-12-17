@@ -272,7 +272,7 @@ def count_leading_zeros(row_vec):
 
 # Driver code.
 if __name__ == "__main__":
-    # Test examples.
+    # Test cases.
     A = [[1, 2, 1], [3, 8, 1], [0, 4, -4]]
     B = [[1, 2, 1], [3, 8, 1], [0, 4, 1]]
     C = [[0, 4, 1], [3, 8, 1], [1, 2, 1]]
