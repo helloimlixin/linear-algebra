@@ -149,6 +149,92 @@ def matmul(matrix1, matrix2):
     
     return product
 
+def matmul_pointwise(matrix1, matrix2):
+    """Implementation for pointwise matrix multiplication.
+
+    Args:
+        matrix1 ([[], [], ...]): a nested list representing matrix1
+        matrix2 ([[], [], ...]): a nested list representing matrix2
+
+    Returns:
+        [[], [], ...]: a nested list representing the resulting matrix
+    """
+    # Sanity check.
+    if matrix1 is None or len(matrix1) == 0:
+        print("Matrix1 is empty! Bail...")
+        return
+    if matrix2 is None or len(matrix2) == 0:
+        print("Matrix2 is empty! Bail...")
+        return
+    if get_dim(matrix1) != get_dim(matrix2):
+        print("The dimensions of the matrices must match! Bail...")
+        return
+    
+    nrows, ncols = get_dim(matrix1)[0], get_dim(matrix1)[1]
+    
+    matrix = [] # initialize an empty list to store the result
+    row = []
+
+    for i in range(nrows):
+        for j in range(ncols):
+            row.append(matrix1[i][j] * matrix2[i][j])
+        matrix.append(row)
+        row = []
+
+    return matrix
+
+def matdiv_pointwise(matrix1, matrix2):
+    """Implementation for pointwise matrix division.
+
+    Args:
+        matrix1 ([[], [], ...]): a nested list representing matrix1
+        matrix2 ([[], [], ...]): a nested list representing matrix2
+
+    Returns:
+        [[], [], ...]: a nested list representing the resulting matrix
+    """
+    # Sanity check.
+    if matrix1 is None or len(matrix1) == 0:
+        print("Matrix1 is empty! Bail...")
+        return
+    if matrix2 is None or len(matrix2) == 0:
+        print("Matrix2 is empty! Bail...")
+        return
+    if get_dim(matrix1) != get_dim(matrix2):
+        print("The dimensions of the matrices must match! Bail...")
+        return
+    
+    nrows, ncols = get_dim(matrix1)[0], get_dim(matrix1)[1]
+    
+    matrix = [] # initialize an empty list to store the result
+    row = []
+
+    for i in range(nrows):
+        for j in range(ncols):
+            if matrix2[i][j] == 0:
+                print("Zero numerator encounter, bail...")
+                return
+            row.append(matrix1[i][j] / matrix2[i][j])
+        matrix.append(row)
+        row = []
+
+    return matrix
+
+def get_dim(matrix):
+    """Helper function to find the dimension of a matrix.
+
+    Args:
+        matrix ([[], [], ...]): a nested list representing a matrix
+
+    Returns:
+        []: a list containing the row and column dimensions of a matrix respectively
+    """
+    dim = []
+    dim.append(len(matrix))
+    dim.append(len(matrix[0]))
+
+    return dim
+
 def get_column(matrix, col_idx):
     """Helper function to extract a column from a matrix.
 
@@ -224,7 +310,8 @@ if __name__ == "__main__":
     B = [[1, 3, 2], [3, 8, 2], [2, 6, 4]]
     C = [[1, 2, 3], [4, 5, 6]]
     D = [[7, 8], [9, 10], [11, 12]]
-    print_matrix(transpose(A))
-    print_matrix(mat_add(A, B))
-    print_matrix(scalar_matmul(2, A))
-    print_matrix(matmul(C, D))
+    # print_matrix(transpose(A))
+    # print_matrix(mat_add(A, B))
+    # print_matrix(scalar_matmul(2, A))
+    # print_matrix(matmul(C, D))
+    print_matrix(matmul_pointwise(A, B))
